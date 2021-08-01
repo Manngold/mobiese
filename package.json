@@ -1,0 +1,17 @@
+{
+  "name": "mobiese",
+  "version": "1.0.0",
+  "description": "simple movie app using vanilla js",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  }
+}

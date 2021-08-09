@@ -1,4 +1,4 @@
-import Util from '../lib/util';
+import Util from './util';
 
 const movieListQuery = {
   api_key: process.env.API_KEY,

@@ -1,16 +1,21 @@
 import _ from '../lib/fx';
+import helper from '../lib/helper';
+
 const Util = {};
 
-const sumQuery = (a, b) => `${a}&${b}`
-const setKeyValue = ([k, v]) => {
-  if (v !== undefined) return `${k}=${v}`;
-}
-
 Util.queryGenerator = (object) =>
-  _.go(
-    Object.entries(object),
-    _.map(setKeyValue),
-    _.reduce(sumQuery)
-  );
+	_.go(
+		Object.entries(object),
+		_.map(helper.setKeyValue),
+		_.reduce(helper.sumQuery)
+	);
+
+Util.urlGenerator = (baseUrl, ...args) => {
+	if (!baseUrl || !baseUrl.length) throw new Error('baseUrl is undefined');
+
+	const segments = [baseUrl, ...args];
+
+	return _.go(segments, _.reduce(helper.addString));
+};
 
 export default Util;

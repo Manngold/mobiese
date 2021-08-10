@@ -9,7 +9,10 @@ const movieListQuery = {
 
 const BASE_URL = process.env.BASE_URL;
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
 	const query = Util.queryGenerator(movieListQuery);
 	const url = Util.urlGenerator(BASE_URL, '/movie/now_playing?', query);
+
+	const movieList = await MovieService.fetchMovieList(url);
+	const movieTmpl = MovieService.tmpl(movieList);
 });

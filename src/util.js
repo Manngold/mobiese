@@ -18,4 +18,8 @@ Util.urlGenerator = (baseUrl, ...args) => {
 	return _.go(segments, _.reduce(helper.addString));
 };
 
+Util.fetchData = (url) => fetch(url).then((res) => res.json());
+Util.takeRes = (res) =>
+	res instanceof Promise ? res.then((a) => a.results) : res;
+
 export default Util;

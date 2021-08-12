@@ -1,5 +1,7 @@
 import Util from './util';
+import $ from '../lib/dom';
 import MovieService from './services/movie_service';
+import _ from '../lib/fx';
 
 const movieListQuery = {
 	api_key: process.env.API_KEY,
@@ -15,4 +17,11 @@ window.addEventListener('load', async () => {
 
 	const movieList = await MovieService.fetchMovieList(url);
 	const movieTmpl = MovieService.tmpl(movieList);
+	_.go(
+		'div',
+		$.cre,
+		$.addClass('movie-list'),
+		$.appendChild($.qs('#app')),
+		$.innerHTML(movieTmpl)
+	);
 });

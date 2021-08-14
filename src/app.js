@@ -1,7 +1,8 @@
 import Util from './util';
 import $ from '../lib/dom';
-import MovieService from './services/movie_service';
 import _ from '../lib/fx';
+import MovieService from './services/movie_service';
+import './app.css';
 
 const movieListQuery = {
 	api_key: process.env.API_KEY,

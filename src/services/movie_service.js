@@ -21,10 +21,12 @@ MovieService.tmpl = (movies) =>
 		<div class="card__wrapper">
 			<div class="img__wrapper">
 				<img class="movie__img" src="${m.poster_path}"/>
-				<span class="movie__title">${m.title}</span>
+				<div class="movie__info">
+					<span class="movie__title">${m.title}</span>
+					<span>${m.release_date}</span>
+					<span>${m.vote_average}</span>
+				</div>
 			</div>
-			<span>${m.release_date}</span>
-			<span>${m.vote_average}</span>
 		</div>
 	`
 		),

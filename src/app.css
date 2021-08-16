@@ -16,8 +16,14 @@ body {
 }
 
 .card__wrapper {
+	transition: 0.5s;
 	margin: 1rem;
 }
+.card__wrapper:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
 .img__wrapper {
 	position: relative;
 }
@@ -26,9 +32,11 @@ body {
 	width: 250px;
 	height: 375px;
 }
+
 .movie__title {
 	display: block;
 	font-size: 1.3rem;
+	font-weight: 600;
 }
 .movie__info {
 	color: #eeeeee;

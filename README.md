@@ -2,6 +2,12 @@
 
 ## This is simple movie app using vanilla javascript
 
+무한으로 즐겨요 인기 영화 목록 조회 사이트
+
+infinity scroll을 통한 인기 영화 리스트 조회 앱
+
+TMDB를 통해 인기 영화 리스트를 조회하고 있습니다.
+
 ### For what
 
 - 함수를 값으로 다루기

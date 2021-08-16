@@ -8,8 +8,10 @@ const NO_IMAGE_PATH =
 	'https://raw.githubusercontent.com/Manngold/mannflix/master/src/assets/noPoster.png';
 
 const imgPathGenerator = _.map((movie) => {
-	if (!movie.poster_path) movie.poster_path;
-	movie.poster_path = `${IMG_BASE_URL}${movie.poster_path}`;
+	if (!movie.poster_path) movie.poster_path = NO_IMAGE_PATH;
+	else {
+		movie.poster_path = `${IMG_BASE_URL}${movie.poster_path}`;
+	}
 	return movie;
 });
 

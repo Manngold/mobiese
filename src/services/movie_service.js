@@ -15,8 +15,7 @@ const imgPathGenerator = _.map((movie) => {
 	return movie;
 });
 
-MovieService.fetchMovieList = (url) =>
-	_.go(Util.fetchData(url), Util.takeRes, resolve);
+MovieService.fetchMovieList = (url) => _.go(Util.fetchData(url), Util.takeRes);
 
 MovieService.tmpl = (movies) =>
 	_.go(

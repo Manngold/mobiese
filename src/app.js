@@ -17,14 +17,13 @@ window.addEventListener('load', async () => {
 	const url = Util.urlGenerator(BASE_URL, '/movie/popular?', query);
 
 	const movieList = await MovieService.fetchMovieList(url);
-	const movieTmpl = MovieService.tmpl(movieList);
 
 	_.go(
-		'div',
-		$.cre,
-		$.addClass('movie-list'),
+		movieList,
+		MovieService.tmpl,
+		$.genEl,
 		$.appendChild($.qs('#app')),
-		$.innerHTML(movieTmpl)
+		$.addEvent(MovieService.addPopup, 'click')
 	);
 });
 
@@ -38,8 +37,12 @@ window.addEventListener('scroll', async () => {
 
 		if (!movieList.length) return;
 
-		const movieTmpl = MovieService.tmpl(movieList);
-
-		_.go($.qs('.movie-list'), $.addInnerHTML(movieTmpl));
+		_.go(
+			movieList,
+			MovieService.tmpl,
+			$.genEl,
+			$.getChildren,
+			$.appendChildAll($.qs('.movie-list'))
+		);
 	}
 });

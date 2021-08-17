@@ -39,7 +39,58 @@ body {
 	font-weight: 600;
 }
 .movie__info {
+	width: 100%;
 	color: #eeeeee;
 	position: absolute;
 	left: 0.5rem;
+}
+
+.movie__release-date {
+	color: #bbbbbb;
+}
+
+.movie__score {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.popup-background {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup-body {
+	width: 90vw;
+	height: 80vh;
+	display: flex;
+}
+
+.info {
+	color: #eeeeee;
+	position: relative;
+	margin-left: 2rem;
+}
+
+.close-btn {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	border: none;
+	width: 100px;
+	height: 30px;
+	background-color: #ff2626;
+	color: #eeeeee;
+	border-radius: 5px;
+	transition: 0.3s;
+}
+
+.close-btn:hover {
+	transform: scale(1.1);
 }

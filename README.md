@@ -8,6 +8,8 @@ infinity scroll을 통한 인기 영화 리스트 조회 앱
 
 TMDB를 통해 인기 영화 리스트를 조회하고 있습니다.
 
+변경사항은 release note로 확인이 가능합니다.
+
 ### For what
 
 - 함수를 값으로 다루기

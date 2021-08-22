@@ -49,6 +49,7 @@ MovieService.addPopup = async ({ path }) => {
 		// button이 load된 시점에서 이벤트 추가하는법?
 	);
 
+	//이 코드 위에 go에다 넣고싶다
 	_.go($.qs('.close-btn'), $.addEvent(MovieService.removePopup, 'click'));
 };
 

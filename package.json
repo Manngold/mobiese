@@ -1,6 +1,6 @@
 {
 	"name": "mobiese",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "simple movie app using vanilla js",
 	"main": "dist/main.js",
 	"scripts": {

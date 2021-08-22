@@ -43,17 +43,22 @@ MovieService.addPopup = async ({ path }) => {
 		popupTmpl,
 		$.genEl,
 		$.appendChild($.qs('body')),
-		$.addStyle('left', `${window.scrollX}px`)
+		$.addStyle('left', `${window.scrollX}px`),
+		_.switch($.qs('body')),
+		$.addStyle('overflow', 'hidden')
+		// button이 load된 시점에서 이벤트 추가하는법?
 	);
 
-	_.go($.qs('body'), $.addStyle('overflow', 'hidden'));
 	_.go($.qs('.close-btn'), $.addEvent(MovieService.removePopup, 'click'));
 };
 
-MovieService.removePopup = () => {
-	_.go($.qs('.popup-background'), $.removeChild);
-	_.go($.qs('body'), $.addStyle('overflow', 'visible'));
-};
+MovieService.removePopup = () =>
+	_.go(
+		$.qs('.popup-background'),
+		$.removeChild,
+		_.switch($.qs('body')),
+		$.addStyle('overflow', 'visible')
+	);
 
 MovieService.popUpTmpl = (movie) => `
 	<div class="popup-background">
